@@ -1,0 +1,1007 @@
+[2025-04-30 11:48:02] [algo-component] 加载 Function： calculate_association_rule 成功
+[2025-04-30 11:48:03] [algo-component] 加载 Function： calculate_columns_correlation 成功
+[2025-04-30 11:48:03] [algo-component] 加载 Function： calculate_column_statics 成功
+[2025-04-30 11:48:03] [algo-component] 加载 Function： sobel 成功
+[2025-04-30 11:48:03] 加载了算法工作台组件
+[2025-04-30 11:48:08] [algo-component] 需求信息为空
+[2025-04-30 13:51:43] [algo-component] 加载 Function： calculate_columns_association_rule 成功
+[2025-04-30 13:51:43] [algo-component] 加载 Function： calculate_columns_correlation 成功
+[2025-04-30 13:51:43] [algo-component] 加载 Function： calculate_column_statics 成功
+[2025-04-30 13:51:43] [algo-component] 加载 Function： sobel 成功
+[2025-04-30 13:51:43] 加载了算法工作台组件
+[2025-04-30 13:51:45] [algo-component] 需求信息为空
+[2025-04-30 13:59:20] [algo-component] 加载 Function： calculate_columns_association_rule 成功
+[2025-04-30 13:59:21] [algo-component] 加载 Function： calculate_columns_correlation 成功
+[2025-04-30 13:59:21] [algo-component] 加载 Function： calculate_column_statics 成功
+[2025-04-30 13:59:21] [algo-component] 加载 Function： sobel 成功
+[2025-04-30 13:59:21] 加载了算法工作台组件
+[2025-04-30 13:59:26] [algo-component] CSV文件已上传: D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 13:59:32] [algo-component] 当前输入内容确认：
+[2025-04-30 13:59:32] [algo-component] 文本内容：采集周期与缺陷检出率的关联有多大
+[2025-04-30 13:59:32] [algo-component] 图像路径：None
+[2025-04-30 13:59:32] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 13:59:32] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+采集周期与缺陷检出率的关联有多大
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 13:59:44] [algo-component] 任务生成完成，进入任务执行阶段
+[2025-04-30 13:59:44] [algo-component] ```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "calculate_columns_correlation",
+      "推荐参数": {
+        "data": "List[List]",
+        "header": ["ID", "检测点", "采集周期(ms)", "数据准确率(%)", "缺陷检出率(%)", "硬件成本占预算(%)"],
+        "target_columns": ["采集周期(ms)", "缺陷检出率(%)"],
+        "method": "pearson"
+      }
+    }
+  ]
+}
+```
+[2025-04-30 13:59:44] [algo-component][阶段: 任务执行] 执行失败: 算法 calculate_columns_correlation 执行异常：run() missing 1 required positional argument: 'target_columns'
+[2025-04-30 13:59:57] [algo-component] 文本内容：计算采集周期的均值
+[2025-04-30 13:59:57] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 13:59:57] [algo-component] 图像路径：None
+[2025-04-30 13:59:57] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+计算采集周期的均值
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:00:04] [algo-component][阶段: 任务解析] 任务解析失败，原始内容:
+{'检测任务规划': [{'算法/模型名称': 'calculate_column_statics', '推荐参数': {}}]}
+异常: 检测任务规划中无有效任务！
+��期(ms)", "数据准确率(%)", "缺陷检出率(%)", "硬件成本占预算(%)"],
+        "target_column": "采集周期(ms)"
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:00:49] [algo-component] 加载 Function： calculate_columns_association_rule 成功
+[2025-04-30 14:00:50] [algo-component] 加载 Function： calculate_columns_correlation 成功
+[2025-04-30 14:00:50] [algo-component] 加载 Function： calculate_column_statics 成功
+[2025-04-30 14:00:50] [algo-component] 加载 Function： sobel 成功
+[2025-04-30 14:00:50] 加载了算法工作台组件
+[2025-04-30 14:00:54] [algo-component] CSV文件已上传: D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:00:57] [algo-component] 当前输入内容确认：
+[2025-04-30 14:00:57] [algo-component] 文本内容：计算采集周期的均值
+[2025-04-30 14:00:57] [algo-component] 图像路径：None
+[2025-04-30 14:00:57] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:00:57] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+计算采集周期的均值
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:01:09] [algo-component][阶段: JSON解析] 任务无法处理: [safe_parse] JSON 解析错误: Expecting property name enclosed in double quotes: line 6 column 3 (char 85)
+", "检测点", "采集周期(ms)", "数据准确率(%)", "缺陷检出率(%)", "硬件成本占预算(%)"], [037c13ad-4ed7-4baf-acfb-6d642b4ae5f5, Point-52, 410, 83.78, 76.29, 11.1], [83b4d9a7-c1c3-4805-a949-9853c279d154, Point-25, 157, 84.83, 97.53, 17.28]]
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:01:32] [algo-component] 文本内容：计算采集周期的均值
+[2025-04-30 14:01:32] [algo-component] 当前输入内容确认：
+[2025-04-30 14:01:32] [algo-component] 图像路径：None
+[2025-04-30 14:01:32] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:01:32] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+计算采集周期的均值
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:01:50] [algo-component][阶段: 任务解析] 任务解析失败，原始内容:
+{'检测任务规划': [{'算法/模型名称': 'calculate_column_statics', '推荐参数': {}}]}
+异常: 检测任务规划中无有效任务！
+[2025-04-30 14:01:50] [algo-component] ```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "calculate_column_statics",
+      "推荐参数": {
+        "data": [[ID, 检测点, 采集周期(ms), 数据准确率(%), 缺陷检出率(%), 硬件成本占预算(%)],[037c13ad-4ed7-4baf-acfb-6d642b4ae5f5, Point-52, 410, 83.78, 76.29, 11.1],[83b4d9a7-c1c3-4805-a949-9853c279d154, Point-25, 157, 84.83, 97.53, 17.28]],
+        "header": ["ID", "检测点", "采集周期(ms)", "数据准确率(%)", "缺陷检出率(%)", "硬件成本占预算(%)"],
+        "target_column": "采集周期(ms)"
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:02:09] [algo-component] 文本内容：采集周期与缺陷检出率的关联有多大
+[2025-04-30 14:02:09] [algo-component] 图像路径：None
+[2025-04-30 14:02:09] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:02:09] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+采集周期与缺陷检出率的关联有多大
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:02:18] [algo-component] {
+  "检测任务规划": [
+    {
+      "算法/模型名称": "calculate_columns_correlation",
+      "推荐参数": {
+        "target_columns": ["采集周期(ms)", "缺陷检出率(%)"],
+        "method": "pearson"
+      }
+    }
+  ]
+}
+[2025-04-30 14:04:43] [algo-component] 加载 Function： calculate_columns_association_rule 成功
+[2025-04-30 14:04:44] [algo-component] 加载 Function： calculate_columns_correlation 成功
+[2025-04-30 14:04:44] [algo-component] 加载 Function： calculate_column_statics 成功
+[2025-04-30 14:04:44] [algo-component] 加载 Function： sobel 成功
+[2025-04-30 14:04:44] 加载了算法工作台组件
+[2025-04-30 14:04:48] [algo-component] CSV文件已上传: D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:04:52] [algo-component] 当前输入内容确认：
+[2025-04-30 14:04:52] [algo-component] 文本内容：采集周期与缺陷检出率的关联有多大
+[2025-04-30 14:04:52] [algo-component] 图像路径：None
+[2025-04-30 14:04:52] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:04:52] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+采集周期与缺陷检出率的关联有多大
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:05:01] [algo-component] 任务生成完成，进入任务执行阶段
+     "算法/模型名称": "calculate_columns_correlation",
+      "推荐参数": {
+        "data": 示例数据，
+        "header": ['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)'],
+        "target_columns": ["采集周期(ms)", "缺陷检出率(%)"],
+        "method": "pearson"
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:05:01] [algo-component][阶段: 任务执行] 执行失败: 算法 calculate_columns_correlation 执行异常：run() missing 1 required positional argument: 'target_columns'
+[2025-04-30 14:09:18] [algo-component] 加载 Function： calculate_columns_association_rule 成功
+[2025-04-30 14:09:19] [algo-component] 加载 Function： calculate_columns_correlation 成功
+[2025-04-30 14:09:19] [algo-component] 加载 Function： calculate_column_statics 成功
+[2025-04-30 14:09:19] [algo-component] 加载 Function： sobel 成功
+[2025-04-30 14:09:19] 加载了算法工作台组件
+[2025-04-30 14:09:23] [algo-component] CSV文件已上传: D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:09:29] [algo-component] 文本内容：采集周期与缺陷检出率的关联有多大
+[2025-04-30 14:09:29] [algo-component] 当前输入内容确认：
+[2025-04-30 14:09:29] [algo-component] 图像路径：None
+[2025-04-30 14:09:29] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:09:29] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+采集周期与缺陷检出率的关联有多大
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:09:38] [algo-component][阶段: 任务解析] 任务解析失败，原始内容:
+{'检测任务规划': [{'算法/模型名称': 'calculate_columns_correlation', '推荐参数': {'method': 'pearson'}}]}
+异常: the JSON object must be str, bytes or bytearray, not dict
+, "缺陷检出率(%)", "硬件成本占预算(%)"],
+        "target_columns": ["采集周期(ms)", "缺陷检出率(%)"],
+        "method": "pearson"
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:14:22] [algo-component] 加载 Function： calculate_columns_association_rule 成功
+[2025-04-30 14:14:22] [algo-component] 加载 Function： calculate_columns_correlation 成功
+[2025-04-30 14:14:22] [algo-component] 加载 Function： calculate_column_statics 成功
+[2025-04-30 14:14:22] [algo-component] 加载 Function： sobel 成功
+[2025-04-30 14:14:22] 加载了算法工作台组件
+[2025-04-30 14:14:26] [algo-component] CSV文件已上传: D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:14:30] [algo-component] 当前输入内容确认：
+[2025-04-30 14:14:30] [algo-component] 文本内容：采集周期与缺陷检出率的关联有多大
+[2025-04-30 14:14:30] [algo-component] 图像路径：None
+[2025-04-30 14:14:30] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:14:30] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+采集周期与缺陷检出率的关联有多大
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:14:39] [algo-component] ```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "calculate_columns_association_rule",
+      "推荐参数": {
+        "data": ["ID", "检测点", "采集周期(ms)", "数据准确率(%)", "缺陷检出率(%)", "硬件成本占预算(%)"],
+        "target_columns": ["采集周期(ms)", "缺陷检出率(%)"]
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:18:49] [algo-component] 加载 Function： calculate_columns_association_rule 成功
+[2025-04-30 14:18:49] [algo-component] 加载 Function： calculate_columns_correlation 成功
+[2025-04-30 14:18:49] [algo-component] 加载 Function： calculate_column_statics 成功
+[2025-04-30 14:18:49] [algo-component] 加载 Function： sobel 成功
+[2025-04-30 14:18:49] 加载了算法工作台组件
+[2025-04-30 14:18:53] [algo-component] CSV文件已上传: D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:19:00] [algo-component] 文本内容：采集周期与缺陷检出率的关联有多大
+[2025-04-30 14:19:00] [algo-component] 图像路径：None
+[2025-04-30 14:19:00] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:19:00] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+采集周期与缺陷检出率的关联有多大
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:19:08] [algo-component] ```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "calculate_columns_association_rule",
+      "推荐参数": {
+        "target_columns": ["采集周期(ms)", "缺陷检出率(%)"]
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:19:08] [algo-component] 任务生成完成，进入任务执行阶段
+[2025-04-30 14:19:37] [algo-component] 文本内容：采集周期与数据准确率的关联有多大
+[2025-04-30 14:19:37] [algo-component] 图像路径：None
+[2025-04-30 14:19:37] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:19:37] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+采集周期与数据准确率的关联有多大
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:19:46] [algo-component] ```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "calculate_columns_association_rule",
+      "推荐参数": {
+        "target_columns": ["采集周期(ms)", "数据准确率(%)"]
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:19:46] [algo-component] 任务生成完成，进入任务执行阶段
+[2025-04-30 14:22:17] [algo-component] 加载 Function： calculate_columns_association_rule 成功
+[2025-04-30 14:22:18] [algo-component] 加载 Function： calculate_columns_correlation 成功
+[2025-04-30 14:22:18] [algo-component] 加载 Function： calculate_column_statics 成功
+[2025-04-30 14:22:18] [algo-component] 加载 Function： sobel 成功
+[2025-04-30 14:22:18] 加载了算法工作台组件
+[2025-04-30 14:22:23] [algo-component] CSV文件已上传: D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:22:27] [algo-component] 文本内容：采集周期与缺陷检出率的关联有多大
+[2025-04-30 14:22:27] [algo-component] 图像路径：None
+[2025-04-30 14:22:27] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:22:27] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+采集周期与缺陷检出率的关联有多大
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:22:34] [algo-component] ```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "calculate_columns_correlation",
+      "推荐参数": {
+        "target_columns": ["采集周期(ms)", "缺陷检出率(%)"],
+        "method": "pearson"
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:22:34] [algo-component] 任务生成完成，进入任务执行阶段
+[2025-04-30 14:23:29] [algo-component] 当前输入内容确认：
+[2025-04-30 14:23:29] [algo-component] 文本内容：再加上数据准确率的关联
+[2025-04-30 14:23:29] [algo-component] 图像路径：None
+[2025-04-30 14:23:29] [algo-component] CSV路径：D:/workstation/Myself/DataAnalysis/test_data.csv
+[2025-04-30 14:23:29] [algo-component] 
+你是一个工业数据分析AI系统规划专家，擅长根据用户需求、数据表结构、示例数据和系统已注册算法/模型，规划合理、可落地的分析执行方案。
+
+请严格按照以下步骤执行：
+
+【当前可用算法/模型信息】：  
+- 名称：calculate_columns_association_rule
+  类型：table
+  功能说明：对表格数据进行关联规则挖掘，找出频繁项集及其之间的关联规则。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要参与挖掘的列名
+
+- 名称：calculate_columns_correlation
+  类型：table
+  功能说明：对表格数据中指定多列计算相关性。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_columns: List[str], 要计算相关性的列名列表；参数4: method: str, 相关系数计算方法，可选 'pearson' / 'spearman' / 'kendall'
+
+- 名称：calculate_column_statics
+  类型：table
+  功能说明：对表格数据中指定列计算统计值，如均值、方差、中位数、最大值、最小值等。
+  参数说明：参数1: data: List[List], 表格数据；参数2: header: List, 表头字段；参数3: target_column: str, 要统计的列名
+
+
+
+【数据表结构】：  
+字段：['ID', '检测点', '采集周期(ms)', '数据准确率(%)', '缺陷检出率(%)', '硬件成本占预算(%)']
+
+【示例数据（前2行）】：  
+ID | 检测点 | 采集周期(ms) | 数据准确率(%) | 缺陷检出率(%) | 硬件成本占预算(%)
+037c13ad-4ed7-4baf-acfb-6d642b4ae5f5 | Point-52 | 410 | 83.78 | 76.29 | 11.1
+83b4d9a7-c1c3-4805-a949-9853c279d154 | Point-25 | 157 | 84.83 | 97.53 | 17.28
+
+【用户需求】：  
+再加上数据准确率的关联
+
+---
+
+请依次完成以下任务：
+
+1. 判断需求是否可实现：
+- 如果可行性低于0.7，直接回复："暂时无法处理"
+- 若可行，继续执行
+
+2. 从【当前可用算法/模型信息】中，筛选本次检测任务需要调用的最相关的1个算法/模型，列出名称
+
+3. 为每个算法/模型生成推荐参数：
+- **固定参数 data 和 header 不需要列出**
+- **所有其它参数必须给出有效、合理、可执行的值**
+- **严禁出现空值、说明文字、缺失，严禁无意义填写**
+- 参数值必须基于【用户需求】【数据表结构】【示例数据】推导得出  
+- **若某算法的非固定参数无合理值可推导，直接剔除此算法，不允许保留空字典**
+
+4. 将最终结果按如下 JSON 格式输出，禁止多余注释、说明或解释：
+
+```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "",
+      "推荐参数": {}
+    }
+  ]
+}
+[2025-04-30 14:23:37] [algo-component] ```json
+{
+  "检测任务规划": [
+    {
+      "算法/模型名称": "calculate_columns_correlation",
+      "推荐参数": {
+        "target_columns": ["采集周期(ms)", "缺陷检出率(%)", "数据准确率(%)"],
+        "method": "pearson"
+      }
+    }
+  ]
+}
+```
+[2025-04-30 14:23:37] [algo-component] 任务生成完成，进入任务执行阶段
+[2025-04-30 14:36:04] 加载了注册平台组件
+[2025-04-30 14:38:02] 加载了注册平台组件
+[2025-04-30 14:38:20] 加载了注册平台组件
+[2025-04-30 14:39:53] 加载了注册平台组件
+[2025-04-30 14:40:04] 加载了注册平台组件
+[2025-04-30 14:42:27] 加载了注册平台组件
+[2025-04-30 14:44:01] 加载了注册平台组件
+[2025-04-30 14:44:12] 加载了注册平台组件
+[2025-04-30 14:44:36] 加载了注册平台组件
+[2025-04-30 14:45:41] 加载了注册平台组件
+[2025-04-30 14:45:42] 加载了注册平台组件
+[2025-04-30 14:46:16] 加载了注册平台组件
+[2025-04-30 14:46:32] 加载了注册平台组件
